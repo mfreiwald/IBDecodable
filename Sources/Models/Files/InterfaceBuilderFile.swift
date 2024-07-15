@@ -14,6 +14,10 @@ public protocol InterfaceBuilderFile {
     var ibType: IBType { get }
 
     var document: Document { get }
+
+    init(path: String) throws
+    init(url: URL) throws
+    init(xml: String) throws
 }
 
 extension InterfaceBuilderFile {

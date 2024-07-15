@@ -15,17 +15,17 @@ public class StoryboardFile: InterfaceBuilderFile {
     public let ibType: IBType = .storyboard
     public let document: StoryboardDocument
 
-    public init(path: String) throws {
+    required public init(path: String) throws {
         self.pathString = path
         self.document = try type(of: self).parseContent(pathString: path)
     }
 
-    public init(url: URL) throws {
+    required public init(url: URL) throws {
         self.pathString = url.absoluteString
         self.document = try type(of: self).parseContent(url: url)
     }
 
-    public init(xml: String) throws {
+    required public init(xml: String) throws {
         self.pathString = "$temporary.storyboard"
         self.document = try type(of: self).parseContent(xml: xml)
     }
